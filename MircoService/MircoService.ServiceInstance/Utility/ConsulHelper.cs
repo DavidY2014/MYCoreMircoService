@@ -22,14 +22,14 @@ namespace MircoService.ServiceInstance.Utility
             string ip = configuration["ip"];
             int port = int.Parse(configuration["port"]);
             int weight = string.IsNullOrWhiteSpace(configuration["weight"]) ? 1 :
-                int.Parse(configuration["weight"]);
+                int.Parse(configuration["weight"]);//权重
             client.Agent.ServiceRegister(new AgentServiceRegistration()
             {
                 ID = "service"+Guid.NewGuid(),
                 Name = "OrderServiceGroup",
                 Address = ip,
                 Port = port,//不同实例
-                Tags = new string[] { weight.ToString()},
+                Tags = new string[] { weight.ToString()},//权重
                 //健康检查
                 Check = new AgentServiceCheck()
                 { 

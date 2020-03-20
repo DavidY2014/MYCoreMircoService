@@ -15,3 +15,5 @@
 /MircoService/MircoService.ServiceInstance/bin/Debug/netcoreapp3.1
 /MircoService/MircoService.ServiceInstance/obj
 /MircoService/MircoService/obj
+/MircoService/MircoService.Gateway/bin/Debug/netcoreapp3.1
+/MircoService/MircoService.Gateway/obj
