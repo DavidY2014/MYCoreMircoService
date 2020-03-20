@@ -30,12 +30,13 @@ namespace MircoService.ServiceInstance.Utility
                 Address = ip,
                 Port = port,//不同实例
                 Tags = new string[] { weight.ToString()},
+                //健康检查
                 Check = new AgentServiceCheck()
                 { 
                     Interval = TimeSpan.FromSeconds(12),
                     HTTP = $"http://{ip}:{port}/Api/Health/Index",
-                    Timeout = TimeSpan.FromSeconds(5),
-                    DeregisterCriticalServiceAfter = TimeSpan.FromSeconds(60),
+                    Timeout = TimeSpan.FromSeconds(5),//检测等待
+                    DeregisterCriticalServiceAfter = TimeSpan.FromSeconds(60),//失败移除
                 }
 
 
