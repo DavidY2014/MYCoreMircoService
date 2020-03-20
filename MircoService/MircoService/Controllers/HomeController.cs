@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Consul;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Mirco.Interfaces;
@@ -27,6 +28,30 @@ namespace MircoService.Controllers
             //单体变分布式，也就是通过url远程调用api方法
             //base.ViewBag.Users = _userService.GetAll();
             string url = "http://localhost:5726/api/user/getall";
+
+            #region 发现consul实例
+            {
+                ConsulClient client = new ConsulClient(c =>
+                {
+                    c.Address = new Uri("http://localhost:8500");
+                    c.Datacenter = "dcl";
+                });
+                //获取信息
+                var response = client.Agent.Services().Result.Response;
+                foreach (var item in response.Where(s=>s.Value.Service.Equals("")))
+                { 
+
+                }
+            }
+
+
+            #endregion
+
+
+
+
+
+
             string content = InvokeApi(url);
             base.ViewBag.Users = Newtonsoft.Json.JsonConvert.DeserializeObject<IEnumerable<UserModel>>(content);
             return View();

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
@@ -13,6 +14,11 @@ namespace MircoService.ServiceInstance
     {
         public static void Main(string[] args)
         {
+            //支持命令行传参
+            new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddCommandLine(args)
+                .Build();
             CreateHostBuilder(args).Build().Run();
         }
 

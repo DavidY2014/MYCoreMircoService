@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Mirco.Implments;
 using Mirco.Interfaces;
+using MircoService.ServiceInstance.Utility;
 
 namespace MircoService.ServiceInstance
 {
@@ -49,6 +50,9 @@ namespace MircoService.ServiceInstance
             {
                 endpoints.MapControllers();
             });
+
+            //去注册consul,也就是在启动时候启动此功能
+            this.Configuration.ConsulRegist();
         }
     }
 }
