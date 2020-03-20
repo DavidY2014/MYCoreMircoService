@@ -3,3 +3,15 @@
 ################################################################################
 
 /MircoService/.vs/MircoService/v16
+/MircoService/Mirco.Implments/bin/Debug/netcoreapp3.1
+/MircoService/Mirco.Implments/obj
+/MircoService/Mirco.Interfaces/bin/Debug/netcoreapp3.1
+/MircoService/Mirco.Interfaces/obj
+/MircoService/Mirco.Models/bin/Debug/netcoreapp3.1
+/MircoService/Mirco.Models/obj
+/MircoService/MircoService/bin/Debug/netcoreapp3.1/Properties
+/MircoService/MircoService/bin/Debug/netcoreapp3.1
+/MircoService/MircoService/wwwroot
+/MircoService/MircoService.ServiceInstance/bin/Debug/netcoreapp3.1
+/MircoService/MircoService.ServiceInstance/obj
+/MircoService/MircoService/obj
